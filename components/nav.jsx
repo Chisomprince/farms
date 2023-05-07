@@ -15,21 +15,13 @@ export default function Nav({ dark }) {
       <header
         class={`${
           dark ? "text-black" : "text-white"
-        } absolute  w-full top-0  flex items-center justify-between px-8 py-02`}
+        } absolute  w-full top-0  flex items-center justify-between px-8 py-2`}
       >
         <Link href="/" class="w-3/12">
           {dark ? (
-            <img
-              src="/logo-dark.png"
-              alt="logo"
-              className="object-contain w-20 h-20"
-            />
+            <img src="/logo-dark.png" alt="logo" className="object-contain " />
           ) : (
-            <img
-              src="/logo-white.png"
-              alt="logo"
-              className="object-contain w-20 h-20"
-            />
+            <img src="/logo-white.png" alt="logo" className="object-contain " />
           )}
         </Link>
         <nav class="nav  text-sm">

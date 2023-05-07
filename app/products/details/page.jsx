@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import Nav from "@/components/nav";
 import { Tab } from "@headlessui/react";
 
@@ -217,8 +216,6 @@ export default function Example() {
           </section>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

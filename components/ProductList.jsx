@@ -1,5 +1,7 @@
 // import { StarIcon } from "@heroicons/react/solid";
 
+import Link from "next/link";
+
 const products = [
   {
     id: 1,
@@ -8,7 +10,7 @@ const products = [
     rating: 5,
     reviewCount: 38,
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-01.jpg",
+      "https://plus.unsplash.com/premium_photo-1674755195496-fdfa32272a18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2861&q=80",
     imageAlt: "TODO",
     href: "#",
   },
@@ -19,7 +21,7 @@ const products = [
     rating: 5,
     reviewCount: 18,
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-02.jpg",
+      "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
     imageAlt: "TODO",
     href: "#",
   },
@@ -30,7 +32,7 @@ const products = [
     rating: 5,
     reviewCount: 14,
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-03.jpg",
+      "https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1665&q=80",
     imageAlt: "TODO",
     href: "#",
   },
@@ -41,7 +43,18 @@ const products = [
     rating: 4,
     reviewCount: 21,
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-05-image-card-04.jpg",
+      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+    imageAlt: "TODO",
+    href: "#",
+  },
+  {
+    id: 5,
+    name: "Organize Phone Holder",
+    price: 1500,
+    rating: 4,
+    reviewCount: 21,
+    imageSrc:
+      "https://images.unsplash.com/photo-1560761098-21f5722ecb14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=846&q=80",
     imageAlt: "TODO",
     href: "#",
   },
@@ -63,18 +76,20 @@ export default function ProductList() {
           {products.map((product) => (
             <div key={product.id} className="group relative bg-white shadow-lg">
               <div className=" overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
-                <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
-                  className="w-full max-h-64 object-center object-cover"
-                />
+                <Link href={"/products/details"}>
+                  <img
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    className="w-full max-h-64 object-center object-cover"
+                  />
+                </Link>
               </div>
               <div className="pt-4 pb-4  p-2  sm:p-4">
                 <h3 className="text-sm font-medium text-gray-900">
-                  <a href={product.href}>
+                  <Link href={"/products/details"}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     {product.name}
-                  </a>
+                  </Link>
                 </h3>
                 <div className="mt-3 flex flex-col">
                   <p className="sr-only">{product.rating} out of 5 stars</p>

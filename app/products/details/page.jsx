@@ -1,203 +1,8 @@
 "use client";
+import Footer from "@/components/Footer";
 import Nav from "@/components/nav";
 import { Tab } from "@headlessui/react";
 
-import { useState } from "react";
-const navigation = {
-  categories: [
-    {
-      id: "women",
-      name: "Women",
-      featured: [
-        {
-          name: "New Arrivals",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
-          imageAlt:
-            "Models sitting back to back, wearing Basic Tee in black and bone.",
-        },
-        {
-          name: "Basic Tees",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
-          imageAlt:
-            "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
-        },
-        {
-          name: "Accessories",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg",
-          imageAlt:
-            "Model wearing minimalist watch with black wristband and white watch face.",
-        },
-      ],
-      sections: [
-        [
-          {
-            id: "shoes",
-            name: "Shoes & Accessories",
-            items: [
-              { name: "Sneakers", href: "#" },
-              { name: "Boots", href: "#" },
-              { name: "Flats", href: "#" },
-              { name: "Sandals", href: "#" },
-              { name: "Heels", href: "#" },
-              { name: "Socks", href: "#" },
-            ],
-          },
-          {
-            id: "collection",
-            name: "Shop Collection",
-            items: [
-              { name: "Everything", href: "#" },
-              { name: "Core", href: "#" },
-              { name: "New Arrivals", href: "#" },
-              { name: "Sale", href: "#" },
-              { name: "Accessories", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "clothing",
-            name: "All Clothing",
-            items: [
-              { name: "Basic Tees", href: "#" },
-              { name: "Artwork Tees", href: "#" },
-              { name: "Tops", href: "#" },
-              { name: "Bottoms", href: "#" },
-              { name: "Swimwear", href: "#" },
-              { name: "Underwear", href: "#" },
-            ],
-          },
-          {
-            id: "accessories",
-            name: "All Accessories",
-            items: [
-              { name: "Watches", href: "#" },
-              { name: "Wallets", href: "#" },
-              { name: "Bags", href: "#" },
-              { name: "Sunglasses", href: "#" },
-              { name: "Hats", href: "#" },
-              { name: "Belts", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "brands",
-            name: "Brands",
-            items: [
-              { name: "Full Nelson", href: "#" },
-              { name: "My Way", href: "#" },
-              { name: "Re-Arranged", href: "#" },
-              { name: "Counterfeit", href: "#" },
-              { name: "Significant Other", href: "#" },
-            ],
-          },
-        ],
-      ],
-    },
-    {
-      id: "men",
-      name: "Men",
-      featured: [
-        {
-          name: "Accessories",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/home-page-03-category-01.jpg",
-          imageAlt:
-            "Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters.",
-        },
-        {
-          name: "New Arrivals",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
-          imageAlt:
-            "Drawstring top with elastic loop closure and textured interior padding.",
-        },
-        {
-          name: "Artwork Tees",
-          href: "#",
-          imageSrc:
-            "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
-          imageAlt:
-            "Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.",
-        },
-      ],
-      sections: [
-        [
-          {
-            id: "shoes",
-            name: "Shoes & Accessories",
-            items: [
-              { name: "Sneakers", href: "#" },
-              { name: "Boots", href: "#" },
-              { name: "Sandals", href: "#" },
-              { name: "Socks", href: "#" },
-            ],
-          },
-          {
-            id: "collection",
-            name: "Shop Collection",
-            items: [
-              { name: "Everything", href: "#" },
-              { name: "Core", href: "#" },
-              { name: "New Arrivals", href: "#" },
-              { name: "Sale", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "clothing",
-            name: "All Clothing",
-            items: [
-              { name: "Basic Tees", href: "#" },
-              { name: "Artwork Tees", href: "#" },
-              { name: "Pants", href: "#" },
-              { name: "Hoodies", href: "#" },
-              { name: "Swimsuits", href: "#" },
-            ],
-          },
-          {
-            id: "accessories",
-            name: "All Accessories",
-            items: [
-              { name: "Watches", href: "#" },
-              { name: "Wallets", href: "#" },
-              { name: "Bags", href: "#" },
-              { name: "Sunglasses", href: "#" },
-              { name: "Hats", href: "#" },
-              { name: "Belts", href: "#" },
-            ],
-          },
-        ],
-        [
-          {
-            id: "brands",
-            name: "Brands",
-            items: [
-              { name: "Re-Arranged", href: "#" },
-              { name: "Counterfeit", href: "#" },
-              { name: "Full Nelson", href: "#" },
-              { name: "My Way", href: "#" },
-            ],
-          },
-        ],
-      ],
-    },
-  ],
-  pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
-  ],
-};
 const product = {
   name: "Zip Tote Basket",
   price: "$140",
@@ -206,7 +11,7 @@ const product = {
     {
       id: 1,
       name: "Angled view",
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
+      src: "https://images.unsplash.com/photo-1546630392-db5b1f04874a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     // More images...
@@ -250,54 +55,21 @@ const relatedProducts = [
     color: "White and black",
     href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
+      "https://images.unsplash.com/photo-1631209121750-a9f656d28f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80",
     imageAlt:
       "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
   },
   // More products...
 ];
-const footerNavigation = {
-  products: [
-    { name: "Bags", href: "#" },
-    { name: "Tees", href: "#" },
-    { name: "Objects", href: "#" },
-    { name: "Home Goods", href: "#" },
-    { name: "Accessories", href: "#" },
-  ],
-  company: [
-    { name: "Who we are", href: "#" },
-    { name: "Sustainability", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Privacy", href: "#" },
-  ],
-  customerService: [
-    { name: "Contact", href: "#" },
-    { name: "Shipping", href: "#" },
-    { name: "Returns", href: "#" },
-    { name: "Warranty", href: "#" },
-    { name: "Secure Payments", href: "#" },
-    { name: "FAQ", href: "#" },
-    { name: "Find a store", href: "#" },
-  ],
-};
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Example() {
-  const [open, setOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-
   return (
-    <div className="bg-white">
-      <Nav />
+    <div className="bg-green-">
+      <Nav dark />
 
-      <main className="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mx-auto lg:max-w-none">
+      <main className="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8  ">
+        <div className="max-w-2xl mx-auto lg:max-w-none pt-20">
           {/* Product */}
           <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
             {/* Image gallery */}
@@ -446,118 +218,7 @@ export default function Example() {
         </div>
       </main>
 
-      <footer aria-labelledby="footer-heading" className="bg-white">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-t border-gray-200 py-20">
-            <div className="grid grid-cols-1 md:grid-cols-12 md:grid-flow-col md:gap-x-8 md:gap-y-16 md:auto-rows-min">
-              {/* Image section */}
-              <div className="col-span-1 md:col-span-2 lg:row-start-1 lg:col-start-1">
-                <img
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-                  alt=""
-                  className="h-8 w-auto"
-                />
-              </div>
-
-              {/* Sitemap sections */}
-              <div className="mt-10 col-span-6 grid grid-cols-2 gap-8 sm:grid-cols-3 md:mt-0 md:row-start-1 md:col-start-3 md:col-span-8 lg:col-start-2 lg:col-span-6">
-                <div className="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-900">
-                      Products
-                    </h3>
-                    <ul role="list" className="mt-6 space-y-6">
-                      {footerNavigation.products.map((item) => (
-                        <li key={item.name} className="text-sm">
-                          <a
-                            href={item.href}
-                            className="text-gray-500 hover:text-gray-600"
-                          >
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-900">
-                      Company
-                    </h3>
-                    <ul role="list" className="mt-6 space-y-6">
-                      {footerNavigation.company.map((item) => (
-                        <li key={item.name} className="text-sm">
-                          <a
-                            href={item.href}
-                            className="text-gray-500 hover:text-gray-600"
-                          >
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900">
-                    Customer Service
-                  </h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.customerService.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a
-                          href={item.href}
-                          className="text-gray-500 hover:text-gray-600"
-                        >
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Newsletter section */}
-              <div className="mt-12 md:mt-0 md:row-start-2 md:col-start-3 md:col-span-8 lg:row-start-1 lg:col-start-9 lg:col-span-4">
-                <h3 className="text-sm font-medium text-gray-900">
-                  Sign up for our newsletter
-                </h3>
-                <p className="mt-6 text-sm text-gray-500">
-                  The latest deals and savings, sent to your inbox weekly.
-                </p>
-                <form className="mt-2 flex sm:max-w-md">
-                  <label htmlFor="email-address" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="email-address"
-                    type="text"
-                    autoComplete="email"
-                    required
-                    className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-                  />
-                  <div className="ml-4 flex-shrink-0">
-                    <button
-                      type="submit"
-                      className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                      Sign up
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-100 py-10 text-center">
-            <p className="text-sm text-gray-500">
-              &copy; 2021 Workflow, Inc. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -137,16 +137,16 @@ export default function Example() {
                 <p className="text-lg text-gray-900">{product.price}</p>
               </div>
 
-              <form className="flex gap-2 lg:gap-12 items-center mt-10">
-                <div className="border rounded px-2 h-full w-40 flex divide-x">
+              <form className="flex flex-wrap gap-4 lg:gap-12 items-center mt-10">
+                <div className="border rounded px-2 h-full w-9/12 lg:w-40 flex divide-x">
                   <button className="w-full py-2">+</button>
-                  <span className="w-full py-2">0</span>
+                  <span className="w-full py-2 text-center">0</span>
                   <button className="w-full py-2">+</button>
                 </div>
 
                 <button
                   type="submit"
-                  className="max-w-xs flex-1 bg-[#34A853] border border-transparent rounded-md py-2 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
+                  className="max-w-xs flex-1 m bg-[#34A853] border border-transparent rounded-md py-2 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
                 >
                   Add to bag
                 </button>

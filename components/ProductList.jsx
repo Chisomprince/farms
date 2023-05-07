@@ -72,7 +72,7 @@ export default function ProductList() {
         <h1 className="mb-4">Products</h1>
         <h2 className="sr-only">Products</h2>
 
-        <div className="grid grid-cols-2 gap-4 sm:mx-0 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid  gap-4 sm:mx-0 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
             <div key={product.id} className="group relative bg-white shadow-lg">
               <div className=" overflow-hidden bg-gray-200 aspect-w-1 aspect-h-1 group-hover:opacity-75">
